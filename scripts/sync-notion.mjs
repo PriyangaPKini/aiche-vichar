@@ -97,7 +97,8 @@ function extractProperties(page) {
     date: p.Date?.date?.start,
     description: plainText(p.Description?.rich_text) || undefined,
     tags: (p.Tags?.multi_select ?? []).map((t) => t.name),
-    externalUrl: p['External URL']?.url || undefined,
+    canonicalUrl: p['Canonical URL']?.url || p['External URL']?.url || undefined,
+    titleEmphasis: plainText(p['Title Emphasis']?.rich_text) || undefined,
     featured: p.Featured?.checkbox || undefined,
     slug: plainText(p.Slug?.rich_text) || undefined,
   };
@@ -175,7 +176,8 @@ function buildFrontmatter(post) {
   const lines = ['---', `title: ${quote(post.title)}`, `date: ${quote(post.date)}`];
   if (post.description) lines.push(`description: ${quote(post.description)}`);
   if (post.tags?.length) lines.push(`tags: [${post.tags.map(quote).join(', ')}]`);
-  if (post.externalUrl) lines.push(`externalUrl: ${quote(post.externalUrl)}`);
+  if (post.canonicalUrl) lines.push(`canonicalUrl: ${quote(post.canonicalUrl)}`);
+  if (post.titleEmphasis) lines.push(`titleEmphasis: ${quote(post.titleEmphasis)}`);
   if (post.featured) lines.push(`featured: true`);
   lines.push('---');
   return lines.join('\n');
