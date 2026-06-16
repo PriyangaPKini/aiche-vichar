@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 380" font-family="Inter, system-ui, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a7c3e"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1a1a1a" flood-opacity="0.06"/>
+    </filter>
+    <style>
+      .box { fill: #faf6ec; stroke: #d8ccb4; stroke-width: 1.5; }
+      .endpoint { fill: #f3ecdb; stroke: #d8ccb4; stroke-width: 1.5; }
+      .label { fill: #1a1a1a; font-weight: 500; }
+      .label-bold { fill: #1a1a1a; font-weight: 600; }
+      .label-gold { fill: #4a7c3e; font-weight: 600; }
+      .label-red { fill: #b91c1c; font-weight: 600; }
+      .separator { stroke: #d8ccb4; stroke-width: 1; stroke-dasharray: 3 3; }
+      .flow { stroke: #1a1a1a; stroke-width: 1.5; fill: none; }
+      .flow-gold { stroke: #4a7c3e; stroke-width: 2; fill: none; }
+      .flow-red { stroke: #b91c1c; stroke-width: 2; fill: none; }
+      .icon { fill: none; stroke: #1a1a1a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .branch-label { font-size: 13px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- ── Start pill ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="40" y="155" width="130" height="60" rx="30" class="endpoint"/>
+  </g>
+  <circle cx="72" cy="185" r="14" fill="#1a1a1a"/>
+  <path d="M68,178 L68,192 L80,185 z" fill="#faf6ec"/>
+  <text x="120" y="190" text-anchor="middle" class="label-bold" font-size="15">Start</text>
+
+  <!-- ── Upload Document ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="210" y="135" width="140" height="100" rx="12" class="box"/>
+  </g>
+  <g transform="translate(280,162)">
+    <rect x="-12" y="-12" width="20" height="24" rx="2" class="icon"/>
+    <line x1="-6" y1="-4" x2="2" y2="-4" class="icon"/>
+    <line x1="-6" y1="2" x2="2" y2="2" class="icon"/>
+    <circle cx="10" cy="10" r="7" fill="#4a7c3e" stroke="none"/>
+    <path d="M10,6 L10,14 M6,10 L10,6 L14,10" fill="none" stroke="#faf6ec" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <line x1="222" y1="190" x2="338" y2="190" class="separator"/>
+  <text x="280" y="210" text-anchor="middle" class="label">Upload</text>
+  <text x="280" y="226" text-anchor="middle" class="label">Document</text>
+
+  <!-- ── Run OCR ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="390" y="135" width="120" height="100" rx="12" class="box"/>
+  </g>
+  <g transform="translate(450,170)">
+    <!-- corner brackets -->
+    <path d="M-16,-12 L-16,-16 L-12,-16" class="icon"/>
+    <path d="M12,-16 L16,-16 L16,-12" class="icon"/>
+    <path d="M-16,12 L-16,16 L-12,16" class="icon"/>
+    <path d="M12,16 L16,16 L16,12" class="icon"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1a1a">OCR</text>
+  </g>
+  <line x1="402" y1="190" x2="498" y2="190" class="separator"/>
+  <text x="450" y="218" text-anchor="middle" class="label">Run OCR</text>
+
+  <!-- ── Run Validations ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="550" y="135" width="150" height="100" rx="12" class="box"/>
+  </g>
+  <g transform="translate(625,166)">
+    <rect x="-11" y="-14" width="22" height="28" rx="3" class="icon"/>
+    <rect x="-6" y="-17" width="12" height="6" rx="1.5" fill="#faf6ec" stroke="#1a1a1a" stroke-width="1.6"/>
+    <path d="M-7,-3 l3,3 l6,-6" fill="none" stroke="#4a7c3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-7,7 l3,3 l6,-6" fill="none" stroke="#4a7c3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <line x1="562" y1="190" x2="688" y2="190" class="separator"/>
+  <text x="625" y="210" text-anchor="middle" class="label">Run</text>
+  <text x="625" y="226" text-anchor="middle" class="label">Validations</text>
+
+  <!-- ── Mark Verified (gold-tinted) ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="880" y="50" width="170" height="100" rx="12" fill="#e8efde" stroke="#4a7c3e" stroke-width="1.75"/>
+  </g>
+  <g transform="translate(965,82)">
+    <circle cx="0" cy="0" r="14" fill="#4a7c3e"/>
+    <path d="M-6,0 l4,4 l8,-8" fill="none" stroke="#faf6ec" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <line x1="892" y1="105" x2="1038" y2="105" class="separator" stroke="#4a7c3e" stroke-opacity="0.4"/>
+  <text x="965" y="125" text-anchor="middle" class="label-gold">Mark</text>
+  <text x="965" y="141" text-anchor="middle" class="label-gold">Verified</text>
+
+  <!-- ── Mark Rejected (red-tinted) ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="880" y="230" width="170" height="100" rx="12" fill="#f5dada" stroke="#b91c1c" stroke-width="1.75"/>
+  </g>
+  <g transform="translate(965,262)">
+    <circle cx="0" cy="0" r="14" fill="#b91c1c"/>
+    <path d="M-5,-5 l10,10 M5,-5 l-10,10" fill="none" stroke="#faf6ec" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <line x1="892" y1="285" x2="1038" y2="285" class="separator" stroke="#b91c1c" stroke-opacity="0.35"/>
+  <text x="965" y="305" text-anchor="middle" class="label-red">Mark</text>
+  <text x="965" y="321" text-anchor="middle" class="label-red">Rejected</text>
+
+  <!-- ── End pill ── -->
+  <g filter="url(#soft-shadow)">
+    <rect x="1080" y="160" width="120" height="60" rx="30" class="endpoint"/>
+  </g>
+  <g transform="translate(1110,190)">
+    <circle cx="0" cy="0" r="14" fill="#1a1a1a"/>
+    <rect x="-4.5" y="-4.5" width="9" height="9" rx="1.5" fill="#faf6ec"/>
+  </g>
+  <text x="1160" y="195" text-anchor="middle" class="label-bold" font-size="15">End</text>
+
+  <!-- ── Main flow arrows ── -->
+  <line x1="170" y1="185" x2="208" y2="185" class="flow" marker-end="url(#arrow)"/>
+  <line x1="350" y1="185" x2="388" y2="185" class="flow" marker-end="url(#arrow)"/>
+  <line x1="510" y1="185" x2="548" y2="185" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- ── Branch out of Validations ── -->
+  <!-- Success: orthogonal up-right -->
+  <path d="M700,170 L800,170 L800,100 L878,100" class="flow-gold" marker-end="url(#arrow-gold)"/>
+  <text x="720" y="160" class="branch-label" fill="#4a7c3e">Success</text>
+
+  <!-- Failure: orthogonal down-right -->
+  <path d="M700,200 L800,200 L800,280 L878,280" class="flow-red" marker-end="url(#arrow-red)"/>
+  <text x="720" y="218" class="branch-label" fill="#b91c1c">Failure</text>
+
+  <!-- ── Verified to End (orthogonal, enters top) ── -->
+  <path d="M1050,100 L1140,100 L1140,158" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- ── Rejected to End (orthogonal, enters bottom) ── -->
+  <path d="M1050,280 L1140,280 L1140,222" class="flow" marker-end="url(#arrow)"/>
+</svg>

@@ -4,20 +4,14 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog'))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const searchData = posts.map(post => {
-  const isExternal = !!post.data.externalUrl;
-  const body = isExternal
-    ? (post.data.description || '')
-    : (post.body || '').replace(/^---[\s\S]*?---/, '').replace(/[#*`>\[\]()!_~]/g, '').trim();
-  return {
-    title: post.data.title,
-    body,
-    tags: isExternal ? [] : (post.data.tags || []),
-    date: post.data.date,
-    href: post.data.externalUrl || `/blog/${post.id}`,
-    external: isExternal,
-  };
-});
+const searchData = posts.map(post => ({
+  title: post.data.title,
+  body: (post.body || '').replace(/^---[\s\S]*?---/, '').replace(/[#*`>\[\]()!_~]/g, '').trim(),
+  tags: post.data.tags || [],
+  date: post.data.date,
+  href: `/blog/${post.id}`,
+  external: false,
+}));
 ---
 
 <script id="search-data" type="application/json" set:html={JSON.stringify(searchData)} />

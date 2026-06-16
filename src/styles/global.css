@@ -56,18 +56,18 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 1.25rem;
-  gap: 1rem;
+  padding: 0 0.5rem;
+  gap: 0.25rem;
 }
 
 .navbar-brand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  padding: 0.3rem 0.7rem;
   text-decoration: none;
   flex-shrink: 0;
+  border-radius: 999px;
   transition: background-color var(--transition-duration);
   color: var(--text);
 }
@@ -207,8 +207,14 @@ body {
   font-family: var(--font-heading);
   font-weight: 600;
   font-style: normal;
+  white-space: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.intro-post h1.page-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-variation-settings: "opsz" 36, "SOFT" 50;
 }
 
 .intro p {
@@ -369,25 +375,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .prose h1 { font-size: 2rem; }
-.prose h1.page-title {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-style: normal;
-  margin-bottom: 2rem;
-  letter-spacing: -0.01em;
-}
 .prose h2 { font-size: 1.4rem; }
 .prose h3 { font-size: 1.15rem; }
 .prose p { margin-bottom: 1rem; }
 .prose ul, .prose ol { margin: 1rem 0; padding-left: 1.5rem; }
 .prose li { margin-bottom: 0.4rem; }
 .prose a {
-  color: var(--text);
+  color: var(--gold);
   text-decoration: underline;
   text-decoration-thickness: 1px;
+  text-decoration-color: var(--gold);
   text-underline-offset: 3px;
   border-radius: 2px;
-  transition: background-color var(--transition-duration);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 .prose a:hover { background: var(--accent-light-bg); }
 .prose blockquote {
@@ -414,6 +414,27 @@ body {
 }
 .prose pre code { background: none; padding: 0; }
 .prose img { max-width: 100%; border-radius: var(--border-radius-lg); margin: 1rem 0; }
+.prose table {
+  width: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  font-size: 0.95rem;
+}
+.prose th,
+.prose td {
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.prose th {
+  font-weight: 600;
+  color: var(--gold);
+  background: var(--accent-light-bg-lighter);
+  border-bottom: 2px solid var(--gold);
+}
+.prose tr:last-child td { border-bottom: none; }
 
 /* ── Page Title ── */
 .page-title {
@@ -1081,6 +1102,26 @@ body {
 .signin-switch a:hover {
   text-decoration: underline;
 }
+
+.link-gold { color: var(--gold); }
+
+.post-canonical {
+  margin: 3rem 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--accent-light-bg-lighter);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.post-canonical a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
 
 /* ── Cover carousel ── */
 .cover {

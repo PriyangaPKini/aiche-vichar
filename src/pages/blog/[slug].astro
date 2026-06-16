@@ -4,6 +4,7 @@ import SignInModal from '../../components/SignInModal.astro';
 import SignUpModal from '../../components/SignUpModal.astro';
 import Comments from '../../components/Comments.astro';
 import { getCollection, render } from 'astro:content';
+import { splitTitleEmphasis } from '../../utils';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -21,12 +22,13 @@ export async function getStaticPaths() {
 
 const { post, prev, next } = Astro.props;
 
-if (post.data.externalUrl) {
-  return Astro.redirect(post.data.externalUrl);
-}
-
 const { Content, headings } = await render(post);
 const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const canonicalUrl = post.data.canonicalUrl;
+const canonicalSource = canonicalUrl
+  ? new URL(canonicalUrl).hostname.replace(/^www\./, '')
+  : null;
+const { head, em } = splitTitleEmphasis(post.data.title, post.data.titleEmphasis);
 ---
 
 <BaseLayout title={`${post.data.title} — Priyanga P Kini`} description={post.data.description}>
@@ -43,12 +45,23 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
     </aside>
   )}
 
-  <article class="prose">
-    <h1 class="page-title">{post.data.title}</h1>
-    <p class="post-item-date" style="margin-bottom: 2rem;">
+  <section class="intro intro-post">
+    <h1 class="page-title">{head}{em && <> <em>{em}</em></>}</h1>
+    <p class="post-item-date">
       {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
     </p>
+  </section>
+
+  <article class="prose">
     <Content />
+    {canonicalUrl && (
+      <p class="post-canonical">
+        Originally published on{' '}
+        <a href={canonicalUrl} target="_blank" rel="noopener noreferrer">
+          {canonicalSource}
+        </a>.
+      </p>
+    )}
   </article>
 
   <Comments postSlug={post.id} />
