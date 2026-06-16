@@ -14,14 +14,9 @@ const tagClass = TAG_CLASSES[index % TAG_CLASSES.length];
 <li class="post-item">
   <div class="post-item-left">
     <div class="post-item-indicator" style={`background: ${color};`}></div>
-    <a
-      class="post-item-title"
-      href={post.data.externalUrl || `/blog/${post.id}`}
-      target={post.data.externalUrl ? "_blank" : undefined}
-    >
+    <a class="post-item-title" href={`/blog/${post.id}`}>
       {post.data.featured && <svg class="featured-icon" width="12" height="12"><use href="#icon-star" /></svg>}
       {post.data.title}
-      {post.data.externalUrl && <svg class="external-icon" width="12" height="12"><use href="#icon-external" /></svg>}
     </a>
   </div>
   <div class="post-item-meta">
