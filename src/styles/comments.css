@@ -42,48 +42,6 @@
   margin-bottom: 1.5rem;
 }
 
-.comments-cta-form {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.comments-cta-form input {
-  flex: 1;
-  padding: 0.65rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--card-bg);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text);
-  outline: none;
-  transition: border-color var(--transition-duration);
-}
-
-.comments-cta-form input:focus {
-  border-color: var(--accent);
-}
-
-.comments-cta-form button {
-  padding: 0.65rem 1.4rem;
-  background: #1a1a1a;
-  color: var(--bg);
-  border: 1px solid #1a1a1a;
-  border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color var(--transition-duration);
-}
-
-.comments-cta-form button:hover {
-  background: #000;
-}
-
 .comments-cta-signup {
   display: inline-block;
   padding: 0.75rem 1.75rem;

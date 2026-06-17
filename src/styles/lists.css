@@ -96,14 +96,6 @@
   opacity: 0.5;
 }
 
-.post-item-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-  margin-left: 1rem;
-}
-
 .post-item-date {
   font-size: 0.78rem;
   color: var(--text-muted);
