@@ -53,7 +53,7 @@ src/
 ├── styles/            # split CSS modules imported by global.css
 ├── constants.ts
 └── utils.ts
-public/                # static assets (favicon, avatar, fonts, blog images)
+public/                # static assets (avatar, gallery, blog images)
 scripts/
 └── sync-notion.mjs    # mirror Notion → src/content/blog
 ```

@@ -54,43 +54,6 @@
 
 .intro p + p { margin-top: 0.75rem; }
 
-.intro-links {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-
-.intro-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
-  text-decoration: none;
-  padding: 0.7rem 1.4rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
-}
-
-.intro-links a:first-child {
-  background: #1a1a1a;
-  color: var(--bg);
-  border-color: #1a1a1a;
-}
-
-.intro-links a:first-child:hover {
-  background: #000;
-  border-color: #000;
-}
-
-.intro-links a:hover {
-  border-color: var(--accent);
-  background: var(--accent-light-bg-lighter);
-}
-
 
 /* ── Prose (blog/book posts) ── */
 .prose h1, .prose h2, .prose h3 {
